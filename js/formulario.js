@@ -4,36 +4,39 @@ function guardar() {
 }
 
 function validarCampos() {
+    let tieneErrores = false;
+    
     let nombre = document.getElementById("id_nombre").value;
     if (nombre === "") {
-        mostrarMensaje('Falta completar el campo');
         mostrarAsterisco('id_error_nombre');
-        return;
+        tieneErrores = true;
     }
 
     let apellido = document.getElementById("id_apellido").value;
     if (apellido === "") {
-        mostrarMensaje('Falta completar el campo');
         mostrarAsterisco('id_error_apellido');
-        return; 
+        tieneErrores = true;
     }
 
     let fechaNacimiento = document.getElementById("id_fecha").value;
 
     let email = document.getElementById("id_email").value;
     if (email === "") {
-        mostrarMensaje('Falta completar el campo');
         mostrarAsterisco('id_error_email');
-        return;
+        tieneErrores = true;
     } else if (!validarEmail(email)) {
-        mostrarMensaje('Formato de email inválido');
         mostrarAsterisco('id_error_email');
-        return;
+        tieneErrores = true;
     }
 
     let password = document.getElementById("id_password").value;
 
-    // Si llega aquí, TODO está validado
+    if (tieneErrores) {
+        mostrarMensaje('Falta completar campos obligatorios');
+        return;
+    }
+
+    
     alert("Formulario validado correctamente");
 }
 
