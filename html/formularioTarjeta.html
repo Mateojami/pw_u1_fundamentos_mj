@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/formularioTarjeta.css">
+    <script src="../js/formularioTarjeta.js"></script>
+</head>
+
+<body>
+    <!--CONTENEDOR PRINCIPAL-->
+    <div class="container">
+
+        <!--TARJETA-->
+        <div class="card-image">
+            <img src="../img/tarjetapichincha.jpg" alt="card">
+        </div>
+
+        <!--FORMULARIO-->
+        <div class="formulario tarjeta">
+            <section>
+                <form action="#">
+                    <h2>Payment Details</h2>
+                    <div id="id_msg_error" class="msg_error"></div>
+                    <p type="Cardholder Name:">
+                        <input id="id_nombre" type="text">
+                        <span id="id_error_nombre" class="error_asterisco"></span>
+                    </p>
+                    <p type="Card Number:">
+                        <input id="id_card" type="text">
+                        <span id="id_error_card" class="error_asterisco"></span>
+                    </p>
+                    <div class="fila-2">
+                    <p type="Exp Date:">
+                        <input type="text" id="id_fecha" placeholder="MM/YY" maxlength="5"
+                            pattern="(0[1-9]|1[0-2])\/\d{2}" required>
+                        <span id="id_error_fecha" class="error_asterisco"></span>
+                    </p>
+                    <p type="Cvv:">
+                        <input id="id_cvv" type="text" maxlength="3" pattern="\d{3}" inputmode="numeric"
+                            placeholder="000">
+                        <span id="id_error_cvv" class="error_asterisco"></span>
+                    </p>
+                    </div>
+                    <div class="centrar-boton">
+                        <button onclick="guardar()">Confirm</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+    </div>
+</body>
+
+</html>

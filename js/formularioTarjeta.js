@@ -12,24 +12,24 @@ function validarCampos() {
         tieneErrores = true;
     }
 
-    let apellido = document.getElementById("id_apellido").value;
-    if (apellido === "") {
-        mostrarAsterisco('id_error_apellido');
+    let card = document.getElementById("id_card").value;
+    if (card === "") {
+        mostrarAsterisco('id_error_card');
         tieneErrores = true;
     }
 
-    let fechaNacimiento = document.getElementById("id_fecha").value;
-
-    let email = document.getElementById("id_email").value;
-    if (email === "") {
-        mostrarAsterisco('id_error_email');
-        tieneErrores = true;
-    } else if (!validarEmail(email)) {
-        mostrarAsterisco('id_error_email');
+    let fechaExpiracion = document.getElementById("id_fecha").value;
+    if (fechaExpiracion === "") {
+        mostrarAsterisco('id_error_fecha');
         tieneErrores = true;
     }
 
-    let password = document.getElementById("id_password").value;
+    
+    let cvv = document.getElementById("id_cvv").value;
+     if (cvv === "") {
+        mostrarAsterisco('id_error_cvv');
+        tieneErrores = true;
+    }
 
     if (tieneErrores) {
         mostrarMensaje('Falta completar campos obligatorios');
@@ -56,9 +56,4 @@ function limpiarMensajes() {
 
     const erroresAsterisco = document.querySelectorAll('.error_asterisco');
     erroresAsterisco.forEach(e => e.innerText = '');
-}
-
-function validarEmail(email) {
-    const patron = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return patron.test(email);
 }
